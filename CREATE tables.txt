@@ -1,0 +1,105 @@
+Creating a database:
+For creating a database I used folllowing commands in mysql
+CREATE DATABASE grocery_store;
+
+SHOW DATABASES; -- TO check if the database was created
+
+now as the database is created i want to use this database to create tables.
+
+For creating tables
+
+
+CREATE TABLE Customer(
+CustID int NOT NULL,
+CustName varchar(50) NOT NULL,
+CustPhone int NOT NULL,
+CustLocation int NOT NULL
+);
+
+
+CREATE TABLE store(
+storeID int NOT NULL,
+storeName varchar(50) NOT NULL,
+BrandsAvailable varchar(50) NOT NULL,
+storeLocation int NOT NULL
+);
+
+CREATE TABLE shopping_order(
+OrdID int NOT NULL,
+OrdDate DATE NOT NULL,
+OrdLocation int NOT NULL,
+OrdTot int NOT NULL
+);
+
+CREATE TABLE employee(
+EmpID int NOT NULL,
+EmpName varchar(50) NOT NULL,
+EmpPhone int NOT NULL,
+EmpType varchar(50) NOT NULL
+);
+
+CREATE TABLE product(
+ProductID int NOT NULL,
+ProdPrice int NOT NULL,
+ProdName varchar(50) NOT NULL,
+ProdBrand varchar(50) NOT NULL,
+QtyAvailable int NOT NULL
+);
+
+
+DESCRIBE store;  used to check the tables
+
+To fill the above tables following commands are used
+
+INSERT INTO customer
+(CustID , CustName, Custphone, CustLocation)
+VALUES 
+(9001, "virat", 999999, 100021),
+(9002, "warner", 9876543, 100021 ),
+(9003, "kane", 1234567, 100023),
+(9004, "bravo", 3456789, 100024);
+
+
+INSERT INTO employee(EmpID, EmpName, EmpPhone, EmpType)
+VALUES 
+(55, "william", 23456, "manager"),
+(56, "james", 25678, "DB Admin"),
+(57, "jones", 29876, "Developer"),
+(58, "mick", 21432, "Tester");
+
+INSERT INTO product(ProductID, ProdPrice, ProdName, ProdBrand, QtyAvailable)
+VALUES 
+(1000, 45 , "BROWN BREAD", "bread", 30),
+(1001, 33, "FULL CREAM", "milk", 15),
+(1002, 156, "CHICKEN", "meat", 50),
+(1003, 98, "APPLES", "fruits", 113);
+
+
+INSERT INTO shopping_order(OrdID , Orddate, OrdLocation, OrdTot)
+VALUES 
+(301, "2021-12-21", 100024, 300 ),
+(302, "2021-12-25", 100021, 245),
+(303, "2021-10-18", 100024, 500),
+(304, "2021-12-12", 100022, 145);
+
+INSERT INTO store(storeID , storeName, BrandsAvailable, storeLocation)
+VALUES 
+(100, "walmart", "bread", 100021),
+(200, "costco", "milk", 100022),
+(300, "kroger", "meat", 100023),
+(400, "publix",  "fruits", 100024);
+
+After populating the tables we can check the tables using folllowing commands
+SELECT * FROM store;
+SELECT * FROM product;
+SELECT * FROM customer;
+SELECT * FROM shopping_order;
+SELECT * FROM employee;
+
+
+ 
+
+
+
+
+
